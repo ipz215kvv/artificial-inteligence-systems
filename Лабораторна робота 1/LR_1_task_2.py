@@ -27,14 +27,14 @@ def normalize(target, norm="l1"):
 
 input_data = np.array(
     [
-        [1.3, 3.9, 6.2],
-        [4.9, 2.2, -4.3],
-        [-2.6, 6.5, 4.1],
-        [-5.2, -3.4, -5.2],
+        [-2.3, -1.6, -6.1],
+        [-2.4, -1.2, 4.3],
+        [3.2, 3.1, 6.1],
+        [-4.4, 1.4, -1.2],
     ]
 )
 
-binarized_data = binarize(input_data, 2.0)
+binarized_data = binarize(input_data, 2.1)
 print(f"Binarized data:\n{binarized_data}")
 
 print()
