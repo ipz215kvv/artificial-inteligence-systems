@@ -1,0 +1,65 @@
+[System]
+Name='task_1'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=2
+NumRules=11
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='temperature'
+Range=[0 100]
+NumMFs=4
+MF1='cold':'trimf',[-20.8333333333333 0 20.8333333333333]
+MF2='slightly_cold':'trimf',[4.16666666666667 25 45.8333333333333]
+MF3='slightly_hot':'trimf',[54.1666666666667 75 95.8333333333333]
+MF4='hot':'trimf',[79.1666666666667 100 120.833333333333]
+
+[Input2]
+Name='flow'
+Range=[0 100]
+NumMFs=4
+MF1='weak':'trimf',[-20.8333333333333 0 20.8333333333333]
+MF2='slightly_weak':'trimf',[4.16666666666667 25 45.8333333333333]
+MF3='slightly_strong':'trimf',[54.1666666666667 75 95.8333333333333]
+MF4='strong':'trimf',[79.1666666666667 100 120.833333333333]
+
+[Output1]
+Name='hot_water_angle'
+Range=[-90 90]
+NumMFs=6
+MF1='left':'trimf',[-120 -90 -60]
+MF2='middle_left':'trimf',[-84 -54 -24]
+MF3='slightly_left':'trimf',[-48 -18 12]
+MF4='slightly_right':'trimf',[-12 18 48]
+MF5='middle_right':'trimf',[24 54 84]
+MF6='right':'trimf',[60 90 120]
+
+[Output2]
+Name='cold_water_angle'
+Range=[-90 90]
+NumMFs=6
+MF1='left':'trimf',[-120 -90 -60]
+MF2='middle_left':'trimf',[-84 -54 -24]
+MF3='slightly_left':'trimf',[-48 -18 12]
+MF4='slightly_right':'trimf',[-12 18 48]
+MF5='middle_right':'trimf',[24 54 84]
+MF6='right':'trimf',[60 90 120]
+
+[Rules]
+4 4, 2 5 (1) : 1
+4 2, 0 5 (1) : 1
+3 4, 3 0 (1) : 1
+3 1, 4 4 (1) : 1
+3 3, 1 0 (1) : 1
+2 4, 5 2 (1) : 1
+2 3, 5 3 (1) : 1
+1 1, 6 0 (1) : 1
+1 4, 2 5 (1) : 1
+3 4, 3 3 (1) : 1
+3 1, 4 4 (1) : 1
